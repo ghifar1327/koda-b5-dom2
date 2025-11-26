@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="event" />
+    <title>event</title>
+    <script src="script.js" defer></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* minitask 1 */
+      #pwd {
+        border-style: none;
+        outline: none;
+      }
+      input[type="checkbox"] {
+        z-index: 1;
+        opacity: 10%;
+      }
+      input[type="checkbox"],
+      .password img {
+        right: 0;
+        position: absolute;
+      }
+      img {
+        width: 16px;
+        height: 16px;
+      }
+      .password {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        width: fit-content;
+      }
+      .password img:last-of-type {
+        display: none;
+      }
+      input[type="password"]::-ms-reveal,
+      input[type="password"]::-ms-clear {
+        display: none;
+      }
+      /* minitask 2 */
+      nav {
+        padding: 20px 60px 10px 60px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav-right {
+        gap: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .hamburger {
+        position: relative;
+        display: none;
+      }
+      .hamburger input,
+      .hamburger img {
+        /* position: absolute; */
+        width: 30px;
+        height: 30px;
+      }
+      .hamburger  img{
+        position: absolute;
+        right: 100%;
+      }
+      .side-modal{
+        display: none;
+        padding-right: 60px;  
+        font-size: 50px;
+        text-align: end;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+      }
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+        .nav-right {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <h1>Ghifar Ramdhni</h1>
+        </div>
+        <div class="nav-right">
+          <p>About Me</p>
+          <p>Contact Us</p>
+          <p>Menu</p>
+        </div>
+        <div class="hamburger">
+          <input type="checkbox" name="" id="hamburgerToggle" />
+          <img src="hamburger.png" alt=""/>
+          <img src="icons8-x-64.png" alt="" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="side-modal">
+            <p>Menu</p>
+            <p>About Us</p>
+            <p>Contact Us</p>
+          </div>
+      </section>
+      <form>
+        <div>
+          <input type="text" id="username" placeholder="Insert Username" />
+        </div>
+        <div class="password">
+          <input type="password" id="pwd" placeholder="Insert Password" />
+          <input type="checkbox" name="" id="show" />
+          <img src="eyebrow.png" alt="" />
+          <img src="eye.png" alt="" />
+        </div>
+        <button type="submit">submit</button>
+      </form>
+    </main>
+  </body>
+</html>
