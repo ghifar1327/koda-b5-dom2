@@ -13,14 +13,52 @@
         justify-content: center;
         height: 100vh;
       }
-      p{
+      p {
         display: none;
         color: red;
+      }
+      form > div {
+        margin-bottom: 20px;
+      }
+      input{
+        border: none;
+        outline: none;
+      }
+      input[type="checkbox"]{
+        opacity: 0;
+        z-index: 1;
+      }
+      img,
+      input[type="checkbox"] {
+        position: absolute;
+        right: 2px;
+        height: 20px;
+      }
+      .passwordToggle,
+      #username{
+        position: relative;
+        width: 190px;
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
       }
     </style>
   </head>
   <body>
-    <div id="target"></div>
-    <p id="error">Password minimal 6 kakter</p>
+    <form method="get">
+      <div>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div class="passwordToggle">
+        <input type="password" id="password" placeholder="Insert Password" />
+        <input type="checkbox" name="" id="show" />
+        <img src="eyebrow.png" alt="" class="eyebrow"/>
+        <img src="eye.png" alt="" class="eye"/>
+      </div>
+      <div>
+        <button type="submit">LOGIN</button>
+      </div>
+    </form>
+    <p id="error">Password minimal 6 kerakter</p>
   </body>
 </html>

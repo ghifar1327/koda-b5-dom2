@@ -1,5 +1,5 @@
 const div = document.querySelector("div.grid");
-const fragment = document.createDocumentFragment()
+const fragment = document.createDocumentFragment();
 async function getData() {
   const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=30";
   try {
@@ -14,29 +14,31 @@ async function getData() {
     const detailChar = responses.map((res, i) => ({
       name: nameChar[i],
       image: res.sprites.front_shiny,
-      type: res.types.map(idx=> idx.type.name)
+      type: res.types.map((idx) => idx.type.name),
       // abilities: res.abilities.map((idx) => idx.ability.name),
     }));
     console.log(detailChar);
-    detailChar.forEach((item)=>{
-      const cardPoke = document.createElement('div')
-      cardPoke.style.border = "1px solid black"
-      cardPoke.style.borderRadius = "8px"
-      cardPoke.style.width = 'fit-content'
-      cardPoke.style.padding = '5px'
-      cardPoke.style.textAlign = 'center'
-      const img = document.createElement('img')
-      img.src = item.image
-      img.alt = item.name
-      img.style.width= '200px'
-      const h2 = document.createElement('h2')
-      h2.textContent = item.name
-      const p = document.createElement('p')
-      p.textContent = item.type
-      cardPoke.append(img,h2,p)
-      fragment.append(cardPoke)
-    })
-    div.appendChild(fragment)
+    detailChar.forEach((item) => {
+      const cardPoke = document.createElement("div");
+      cardPoke.style.backgroundColor = "white";
+      cardPoke.style.boxShadow =
+        "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset";
+      cardPoke.style.borderRadius = "8px";
+      cardPoke.style.width = "fit-content";
+      cardPoke.style.padding = "5px";
+      cardPoke.style.textAlign = "center";
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.name;
+      img.style.width = "200px";
+      const h2 = document.createElement("h2");
+      h2.textContent = item.name;
+      const p = document.createElement("p");
+      p.textContent = item.type;
+      cardPoke.append(img, h2, p);
+      fragment.append(cardPoke);
+    });
+    div.appendChild(fragment);
   } catch (error) {
     console.log(error);
   }
