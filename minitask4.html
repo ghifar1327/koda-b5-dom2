@@ -20,11 +20,12 @@
       form > div {
         margin-bottom: 20px;
       }
-      input{
+      input {
+        height: 30px;
         border: none;
         outline: none;
       }
-      input[type="checkbox"]{
+      input[type="checkbox"] {
         opacity: 0;
         z-index: 1;
       }
@@ -35,12 +36,31 @@
         height: 20px;
       }
       .passwordToggle,
-      #username{
+      #username {
+        border-radius: 5px;
+        padding: 1px;
         position: relative;
         width: 190px;
         display: flex;
         align-items: center;
         border: 1px solid black;
+      }
+      form {
+        border-radius: 8px;
+        border: 1px solid black;
+        padding: 30px;
+      }
+      button {
+        color: white;
+        border-style: none;
+        background-color: rgb(48, 48, 248);
+        padding: 5px;
+        width: 195px;
+      }
+      #error {
+        font-size: 12px;
+        position: absolute;
+        top: 24px;
       }
     </style>
   </head>
@@ -52,13 +72,13 @@
       <div class="passwordToggle">
         <input type="password" id="password" placeholder="Insert Password" />
         <input type="checkbox" name="" id="show" />
-        <img src="eyebrow.png" alt="" class="eyebrow"/>
-        <img src="eye.png" alt="" class="eye"/>
+        <img src="eyebrow.png" alt="" class="eyebrow" />
+        <img src="eye.png" alt="" class="eye" />
+        <p id="error">Password minimal 6 kerakter</p>
       </div>
       <div>
         <button type="submit">LOGIN</button>
       </div>
     </form>
-    <p id="error">Password minimal 6 kerakter</p>
   </body>
 </html>
