@@ -19,7 +19,7 @@ const showHamburgerToggle = document.getElementById("hamburgerToggle");
 const hamburger = document.querySelector(".hamburger>img:first-of-type");
 const X = document.querySelector(".hamburger>img:last-of-type");
 X.style.display = "none";
-const modal = document.querySelector('.side-modal')
+const modal = document.querySelector(".side-modal");
 showHamburgerToggle.addEventListener("change", () => {
   if (showHamburgerToggle.checked) {
     hamburger.style.display = "none";
